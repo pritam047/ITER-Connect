@@ -1,0 +1,61 @@
+.profile_container {
+  width: 100%;
+  /* background-color: red; */
+  background-color: #ececec;
+  display: flex;
+  justify-content: center;
+  height: 100rem;
+  margin: 0;
+}
+
+.profile_container .info_container {
+  /* background-color: white; */
+  width: 40rem;
+  height: 15rem;
+  /* margin-top: 1rem; */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 3rem;
+}
+
+.profile_container .info_container .image_div {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 10rem;
+  padding: 0.4rem;
+  background-color: white;
+}
+
+.profile_container .info_container .image_div img {
+  width: 100%;
+  border-radius: 10rem;
+}
+
+.profile_container .info_container .profile_info span {
+  font-size: 2rem;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.profile_container .info_container .profile_info .profile_deets {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.profile_container .info_container .profile_info .profile_deets span {
+  font-size: 1rem;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.profile_container .info_container .profile_info .profile_bio {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile_container .info_container .profile_info .profile_bio .bio {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 0.9rem;
+}

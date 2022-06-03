@@ -1,0 +1,119 @@
+.main_container_blog{
+    width: 100%;
+    /* height: 100%; */
+    /* background-color: red; */
+    /* display: flex;
+    flex-direction: column; */
+}
+
+.main_container_blog .edit_container{
+    width: 75%
+}
+
+.main_container_blog .createBlog{
+    width: 100%;
+    margin-top: 0.5rem;
+    padding-left: 2rem;
+    padding-bottom: 1rem;
+}
+
+.main_container_blog .createBlog span{
+    font-size: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    opacity: 75%;
+}
+
+.main_container_blog .title_container{
+    padding-left: 0.5rem;
+}
+
+.main_container_blog .title_container input{
+    width: 100%;
+    padding-left: 0.5rem;
+    margin-left: 1rem;
+    border: none;
+    height: 2rem;
+    background-color: inherit;
+    border-bottom: 0.1rem solid #5865f2;
+    outline: none;
+}
+
+.main_container_blog .body_container{
+    width: 100%;
+    height: 35rem;
+    /* background-color: black; */
+    margin-left: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.main_container_blog .body_container textarea{
+    width: 70%;
+    margin-top: 2rem;
+    border: none;
+    outline: none;
+    text-align: start;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    font-size: 1rem;
+    font-family: 'Raleway', sans-serif;
+    resize: none;
+}
+
+.main_container_blog .function_container{
+    margin-top: 2rem;
+    margin-left: 3rem;
+    width: 20rem;
+    background-color:white;
+    padding-left: 1rem;
+    border-radius: 0.5rem;
+    padding-top: 0.5rem
+}
+
+.main_container_blog .function_container .draft_publish button{
+    width: 8rem;
+    height: 3rem;
+    border-radius: 0.3rem;
+    border: 0.1rem solid black;
+    opacity: 100%;
+    background-color: inherit;
+}
+
+.main_container_blog .function_container .blog_settings{
+    margin-top: 1.5rem;
+}
+
+.main_container_blog .function_container .blog_settings span{
+    font-size: 1.25rem;
+    font-family: 'Raleway', sans-serif;
+    /* margin-top: 2rem; */
+}
+
+.main_container_blog .function_container .blog_settings .communication{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+}
+
+.main_container_blog .function_container .blog_settings .communication span{
+    font-size: 1rem;
+    padding-left: 0.5rem;
+}
+
+.main_container_blog .function_container .blog_settings .location{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.main_container_blog .function_container .blog_settings .location span{
+    font-size: 1rem;
+    /* padding-left: 0.5rem; */
+}
+
+.main_container_blog .function_container .blog_settings .location input{
+    border: none;
+    height: 1.5rem;
+    border-bottom: 0.1rem solid #5865f2;
+    outline: none;
+}

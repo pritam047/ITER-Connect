@@ -1,0 +1,66 @@
+.main_container_reaction{
+    width: 103%;
+    /* background-color: black; */
+    /* display: flex; */
+    margin-top: 1rem;
+}
+
+.main_container_reaction .like_section{
+    text-align: center;
+}
+
+.main_container_reaction .like_section img{
+    width: 15%;
+}
+
+.main_container_reaction .like_section span{
+    font-size: 1.4rem;
+    font-family: 'Raleway', sans-serif;
+    margin-left: 0.5rem;
+}
+
+.main_container_reaction .comment_section{
+    text-align: center;
+}
+
+.main_container_reaction .comment_section img{
+    width: 15%;
+}
+
+.main_container_reaction .comment_section span{
+    font-size: 1.4rem;
+    font-family: 'Raleway', sans-serif;
+    margin-left: 0.5rem;
+}
+
+.main_container_reaction .share_section{
+    text-align: center;
+}
+
+.main_container_reaction .share_section img{
+    width: 15%;
+}
+
+.main_container_reaction .share_section span{
+    margin-left: 0.5rem;
+}
+
+.main_container_reaction .add_comment{
+    width: 100%;
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+
+.main_container_reaction .add_comment input{
+    width: 75%;
+    border: none;
+    border-bottom: 0.1rem solid #5865f2;
+}
+
+.main_container_reaction .add_comment button{
+    border-radius: 0.2rem;
+    width: 4rem;
+    height: 2rem;
+    border: none;
+    background-color: inherit;
+}

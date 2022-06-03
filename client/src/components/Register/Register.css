@@ -1,0 +1,160 @@
+.container_register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 45rem;
+  background-color: #f5f5f5;
+  /* background-color: red; */
+}
+
+.container_register .center_registerdiv {
+  width: 25rem;
+  height: 40rem;
+  /* border: 10px; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  display: flex;
+  background-color: white;
+  border-radius: 1rem;
+  flex-direction: column;
+}
+
+.container_register .center_registerdiv .register_text {
+  display: flex;
+  justify-content: center;
+  font-family: "Josefin Sans", sans-serif;
+  margin-top: 1rem;
+  opacity: 50%;
+}
+
+.container_register .center_registerdiv .register_google {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.container_register .center_registerdiv .register_google button {
+  width: 65%;
+  padding: 0.5rem;
+  background-color: #ccccff;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.container_register .center_registerdiv .divider_register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 50%;
+}
+
+.container_register .center_registerdiv .image_register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10%;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.container_register .center_registerdiv .image_register img {
+  max-width: 10%;
+}
+
+.container_register .center_registerdiv .input_register {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  /* margin-top: 3rem; */
+  /* height: 4rem; */
+}
+
+.container_register .center_registerdiv .input_register .email {
+  width: 70%;
+  height: 2rem;
+  border-radius: 0.2rem;
+  border: black;
+  /* opacity: 75%; */
+  padding-left: 0.5rem;
+  background-color: #f5f5f5;
+  margin-bottom: 0.5rem;
+}
+
+.container_register .center_registerdiv .input_register .fullname {
+  width: 70%;
+  height: 2rem;
+  border-radius: 0.2rem;
+  border: black;
+  /* opacity: 75%; */
+  padding-left: 0.5rem;
+  background-color: #f5f5f5;
+  margin-bottom: 0.5rem;
+}
+
+.container_register .center_registerdiv .input_register .username {
+  width: 70%;
+  height: 2rem;
+  border-radius: 0.2rem;
+  border: black;
+  /* opacity: 75%; */
+  padding-left: 0.5rem;
+  background-color: #f5f5f5;
+  margin-bottom: 0.5rem;
+}
+
+.container_register .center_registerdiv .input_register .password {
+  width: 70%;
+  height: 2rem;
+  border-radius: 0.2rem;
+  border: black;
+  /* opacity: 75%; */
+  padding-left: 0.5rem;
+  background-color: #f5f5f5;
+  margin-bottom: 0.5rem;
+}
+
+.container_register .center_registerdiv .register_policy {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  font-family: "Josefin Sans", sans-serif;
+  opacity: 50%;
+  margin-top: 1rem;
+}
+
+.container_register .center_registerdiv .register_policy span {
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.container_register .center_registerdiv .register_button {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.container_register .center_registerdiv .register_button button {
+  background-color: #ccccff;
+  border: none;
+  border-radius: 0.5rem;
+  width: 70%;
+  height: 3rem;
+}
+
+.container_register .center_registerdiv .login_div {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.container_register .center_registerdiv .login_div span {
+  font-family: "Josefin Sans", sans-serif;
+  opacity: 100%;
+  font-size: 0.8rem;
+  cursor: pointer;
+}

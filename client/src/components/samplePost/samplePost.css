@@ -1,0 +1,46 @@
+.post_container {
+  width: 100%;
+}
+
+.post_container .post_heading {
+  background-color: white;
+  width: 98%;
+  height: 4rem;
+  border-radius: 1rem 1rem 0 0;
+  /* display: flex; */
+  /* justify-content: center; */
+  padding-left: 2rem;
+  padding-top: 2rem;
+  gap: 0.5rem;
+  display: flex;
+  /* align-items: center; */
+}
+
+.post_container .post_heading img {
+  width: 10%;
+}
+
+.post_container .post_heading .userInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.post_container .userPost .caption {
+  padding-left: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+.post_container .userPost .imagePost {
+  width: 103%;
+  /* height: 10rem; */
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.post_container .userPost .imagePost img {
+  width: 100%;
+  object-fit: cover;
+}
