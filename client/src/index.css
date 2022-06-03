@@ -4,4 +4,6 @@ body {
   background-attachment: fixed;
   background-size: cover; */
   background-color: #f7f8fc;
+  margin: 0;
+  padding: 0;
 }

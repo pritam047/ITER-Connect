@@ -8,6 +8,14 @@
   margin: 0;
 }
 
+.profile_img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin: 10px auto;
+    border: 10px solid #ccc;
+    border-radius: 50%;
+}
 .profile_container .info_container {
   /* background-color: white; */
   width: 40rem;
@@ -19,18 +27,18 @@
   gap: 3rem;
 }
 
-.profile_container .info_container .image_div {
+/* .profile_container .info_container .image_div {
   width: 10rem;
   height: 10rem;
   border-radius: 10rem;
   padding: 0.4rem;
   background-color: white;
-}
+} */
 
-.profile_container .info_container .image_div img {
+/* .profile_container .info_container .image_div img {
   width: 100%;
   border-radius: 10rem;
-}
+} */
 
 .profile_container .info_container .profile_info span {
   font-size: 2rem;

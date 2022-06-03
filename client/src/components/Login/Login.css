@@ -41,7 +41,7 @@
   /* height: 4rem; */
 }
 
-.container_login .center_div .input_login .username {
+.container_login .center_div .input_login .username, .password, .firstname, .lastname {
   width: 70%;
   height: 2rem;
   border-radius: 0.2rem;
@@ -52,16 +52,16 @@
   margin-bottom: 1rem;
 }
 
-.container_login .center_div .input_login .password {
+/* .container_login .center_div .input_login .password {
   width: 70%;
   height: 2rem;
   border-radius: 0.2rem;
   border: black;
-  /* opacity: 75%; */
+   opacity: 75%; 
   padding-left: 0.5rem;
   background-color: #f5f5f5;
   margin-bottom: 1rem;
-}
+} */
 
 .container_login .center_div .login_button {
   display: flex;
@@ -76,7 +76,21 @@
   border: black;
   background-color: #ccccff;
 }
-
+.login_button button:hover{
+  cursor: pointer;
+}
+.google_login{
+  padding: "10px 15px";
+  border-radius: "6px"; 
+  border: "0px solid black";
+  background-color: "#4c8bf5";
+  opacity: 70%;
+}
+.google_login:hover {
+  color: #5865f2;
+  opacity: 100%;
+  cursor: pointer;
+}
 .container_login .center_div .divider_login {
   display: flex;
   align-items: center;
@@ -87,15 +101,15 @@
 .container_login .center_div .login_google {
   display: flex;
   justify-content: center;
-  font-family: "Josefin Sans", sans-serif;
-  opacity: 70%;
-  cursor: pointer;
+  /* font-family: "Josefin Sans", sans-serif;
+  opacity: 70%; */
+  /* cursor: pointer; */
 }
 
-.container_login .center_div .login_google:hover {
+/* .container_login .center_div .login_google:hover {
   color: #5865f2;
   opacity: 100%;
-}
+} */
 
 .container_login .center_div .forgot_password {
   display: flex;
