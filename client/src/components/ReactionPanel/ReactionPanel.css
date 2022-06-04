@@ -1,10 +1,15 @@
 .main_container_reaction{
     width: 103%;
     /* background-color: black; */
-    /* display: flex; */
     margin-top: 1rem;
 }
-
+.bottom_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+/* 
 .main_container_reaction .like_section{
     text-align: center;
 }
@@ -21,12 +26,12 @@
 
 .main_container_reaction .comment_section{
     text-align: center;
-}
+} */
 
-.main_container_reaction .comment_section img{
+/* .main_container_reaction .comment_section img{
     width: 15%;
-}
-
+} */
+/* 
 .main_container_reaction .comment_section span{
     font-size: 1.4rem;
     font-family: 'Raleway', sans-serif;
@@ -43,7 +48,7 @@
 
 .main_container_reaction .share_section span{
     margin-left: 0.5rem;
-}
+} */
 
 .main_container_reaction .add_comment{
     width: 100%;

@@ -103,7 +103,7 @@ function Login() {
         <GoogleLogin
             clientId={process.env.REACT_APP_GOOGLE_OAUTH_CLIENT_ID}
             render={(renderProps) => (
-              <button className="google_login" onClick={renderProps.onClick} disabled={renderProps.disabled}>
+              <button className="login-with-google-btn" onClick={renderProps.onClick} disabled={renderProps.disabled}>
                 Google Sign In
               </button>
             )}
@@ -114,9 +114,11 @@ function Login() {
           />
         </div>
         {!isSignup && (<p className="forgot_password">Forgot Password?</p> ) }
-        <button onClick={switchMode}>
+        <p className="forgot_password">
+        <button className="login_switch" onClick={switchMode}>
                 {isSignup ? 'Already have an account? Sign in' : "Don't have an account? Sign Up"}
         </button>
+        </p>
         {/* <Link to="/register">
           <div className="signup_div">
             <span>Don't have an account?</span>

@@ -49,7 +49,7 @@ const Form = ({currentId, setCurrentId}) => {
       }
       
     return (
-        <Paper className={classes.paper} elevation={6}>
+        // <Paper className={classes.paper} elevation={6}>
             <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
                 <Typography variant="h6">{currentId ? 'Editing' : 'Creating'} a Memory</Typography>
                 <TextField name="title" variant="outlined" label="Title *" fullWidth
@@ -73,7 +73,7 @@ const Form = ({currentId, setCurrentId}) => {
                     Clear
                 </Button>
             </form>
-        </Paper>
+        // </Paper>
     )
 }
 

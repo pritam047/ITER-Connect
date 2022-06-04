@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-
+import { Avatar } from "@mui/material";
 import "./Navbar.css";
 import memoriesLogo from "../../images/memories-Logo.png";
 import memoriesText from "../../images/connect1.png";
@@ -9,7 +9,9 @@ import memoriesText from "../../images/connect1.png";
 import homeIcon from "./icons/home.png";
 import addPost from "./icons/addPost.png";
 import explore from "./icons/explore.png";
-import userProfileIcon from "./icons/user.png";
+// import userProfileIcon from "./icons/user.png";
+
+import Modal from '../Modal/Modal'
 
 import { LOGOUT } from '../../constants/actionTypes';
 import decode from 'jwt-decode';
@@ -22,6 +24,12 @@ function NewNavbar() {
   const location = useLocation();
 
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
+
+  const [modal,setModal] = useState(false);
+
+    const selectModal = ()=>{
+        setModal(!modal);
+    }
 
   const logout = () => {
     dispatch({ type: LOGOUT });
@@ -44,9 +52,9 @@ function NewNavbar() {
   return (
     <div className="header">
       <div className="logo">
-        <img src={memoriesLogo} alt="some img"/>
+        <img src={memoriesLogo} alt="some img" height="45"/>
         <Link to="/">
-        <img src={memoriesText} alt="some img"/>
+        <img src={memoriesText} alt="some img" height="55"/>
         </Link>
       </div>
       <div className="searchBar">
@@ -54,22 +62,24 @@ function NewNavbar() {
       </div>
       {user ?
       (<div className="header_icons">
+         <Modal
+                 displayModal={modal}
+                 closeModal={selectModal}
+          />
         <Link to="/">
-          <img src={homeIcon} alt="some_img"/>
+          <img src={homeIcon} alt="home"/>
         </Link>
-        <Link to="/">
-        <img src={addPost} alt="some_img"/>
-        </Link>
-        <img src={explore} alt="some_img"/>
+        <img src={addPost} onClick={selectModal} alt="add" style={{cursor: "pointer"}}/>
+        <img src={explore} alt="explore"/>
         <Link to="/profile">
-          <img src={userProfileIcon} alt="some_img"/>
+        <Avatar alt={user?.result.name} src={user?.result.imageUrl}>{user?.result.name.charAt(0)}</Avatar>
         </Link>
-        <buttton onClick={logout}>Logout</buttton>
+        <buttton className="button logout" onClick={logout}>Logout</buttton>
       </div>
       ):
       <div>
         <Link to="/auth">
-        <button >Sign In</button>
+        <button className="button signin">LOGIN</button>
         </Link>
       </div>
       }
