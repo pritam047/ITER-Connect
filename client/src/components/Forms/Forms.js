@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, forwardRef, useImperativeHandle} from 'react'
 import { TextField, Button, Typography, Paper } from '@mui/material';
 import FileBase from 'react-file-base64';
 import { useSelector, useDispatch } from 'react-redux';
@@ -7,7 +7,7 @@ import useStyles from './styles';
 
 import { createPost, updatePost } from '../../actions/posts';
 
-const Form = ({currentId, setCurrentId}) => {
+const Form = forwardRef(({currentId, setCurrentId, closeModal}, ref) => {
 
     const [postData, setPostData] = useState({ title: '', message: '', tags: '', selectedFile: '' });
     const post = useSelector((state) => currentId ? state.posts.posts.find((p) => p._id === currentId) : null);
@@ -17,23 +17,32 @@ const Form = ({currentId, setCurrentId}) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();    
     const user = JSON.parse(localStorage.getItem('profile'))
+    
+    useImperativeHandle(ref, () => ({
+      clear,
+    }))
+
     useEffect(() =>{
         if(post) setPostData(post);
     }, [post])
+
+    
     const clear = () => {
         setCurrentId(0);
         setPostData({ title: '', message: '', tags: '', selectedFile: '' });
       };
-
+      
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         if (currentId === 0) {
             dispatch(createPost({ ...postData, name: user?.result?.name }, navigate));
             clear();
+            closeModal();
           } else {
             dispatch(updatePost(currentId, { ...postData, name: user?.result?.name }));
             clear();
+            closeModal();
           }
     }
     const hasFormValues = postData.title || postData.message || postData.tags || postData.selectedFile ? true : false;
@@ -47,7 +56,7 @@ const Form = ({currentId, setCurrentId}) => {
           </Paper>
         );
       }
-      
+    
     return (
         // <Paper className={classes.paper} elevation={6}>
             <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
@@ -75,6 +84,6 @@ const Form = ({currentId, setCurrentId}) => {
             </form>
         // </Paper>
     )
-}
+})
 
 export default Form;

@@ -51,7 +51,7 @@ export const getPostsBySearch = (searchQuery) => async (dispatch) => {
   export const updatePost = (id, post) => async (dispatch) => {
     try {
       const { data } = await api.updatePost(id, post);
-      console.log("updated data:", data);
+      // console.log("updated data:", data);
       dispatch({ type: UPDATE, payload: data });
     } catch (error) {
       console.log(error);

@@ -23,6 +23,25 @@
   height: 50px;
   margin-right: 17px;
 }
+/* .editPost{
+  transition: all .2s ease-in-out;
+} */
+.editPost img{
+  border-radius: 50%;
+  padding: 5px;
+}
+.editPost img:hover{
+  cursor: pointer;
+  background-color: rgb(232, 233, 222);
+  transition: all .2s ease-in-out;
+  /* opacity: 70%; */
+  transform: scale(1.1);
+
+}
+/* .editPost:hover{
+  cursor: pointer;
+  transform: scale(1.1); 
+} */
 
 .post_container .post_heading .userInfo {
   display: flex;

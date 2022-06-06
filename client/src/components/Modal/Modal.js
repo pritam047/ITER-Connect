@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './Modal.css'
 
 import Form from '../Forms/Forms'
@@ -8,42 +8,15 @@ const Modal = props => {
         display: props.displayModal ? 'block' : 'none'
     };
 
+    const clearAll = useRef();
+
     function closeModal(e) {
-        e.stopPropagation()
-        props.closeModal()
+        e?.stopPropagation()
+        clearAll.current.clear();
+        props.closeModal() 
     }
 
-    //Edit post function
-  /*  const updateMeme = (values) => {
-        console.log(values);
-        console.log("POST ID = ", props.data._id);
-        const URL = `${process.env.REACT_APP_URL}/memes/${props.data._id}`
-        console.log(URL);
-        // let patchObj = {
-        //     caption : editCaption,
-        //     url : editUrl
-        // }
-        // console.log(patchObj);
-        fetch(URL, {
-            method: "PATCH",
-            headers: { "Content-type": "application/json" },
-            body: JSON.stringify(values)
-        })
-            .then((response) => {
-                console.log(response);
-                alert("Data Updated successfully!");
-                props.closeModal();
-                props.refresh();
-                // window.location.reload();
-            })
-            .catch((err) => {
-                console.log(err);
-                alert("Error in Updating!")
-                props.closeModal();
-                props.refresh();
-            })
-    }
-    */
+   
     return (
         <div
             className="modal"
@@ -56,7 +29,7 @@ const Modal = props => {
                     onClick={closeModal}>
                     &times;
             </span>
-            <Form />
+            <Form ref={clearAll} currentId={props.currentId} setCurrentId={props.setCurrentId} closeModal={closeModal}/>
             </div>
             {/* EDIT CONTAINER */}
 

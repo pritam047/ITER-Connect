@@ -6,17 +6,17 @@ import SamplePost from "../samplePost/samplePost.js";
 
 import "./Wall.css";
 
-function Wall({setCurrentId}) {
+function Wall({setCurrentId, selectModal}) {
 
   const { posts, isLoading } = useSelector((state) => state.posts);
-  console.log(posts);
+  // console.log(posts);
   if(!posts.length && !isLoading) return 'No posts yet. We will be more than happy to see you create one.😃';
 
   return (
     <div className="container">
       {posts.map((post) => (
         <div className="post_container" key={post._id}>
-        <SamplePost post={post} setCurrentId={setCurrentId}/>
+        <SamplePost post={post} setCurrentId={setCurrentId} selectModal={selectModal}/>
         </div>
     
     ))}    

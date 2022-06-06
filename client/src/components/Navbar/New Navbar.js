@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { Avatar } from "@mui/material";
@@ -11,13 +11,13 @@ import addPost from "./icons/addPost.png";
 import explore from "./icons/explore.png";
 // import userProfileIcon from "./icons/user.png";
 
-import Modal from '../Modal/Modal'
+
 
 import { LOGOUT } from '../../constants/actionTypes';
 import decode from 'jwt-decode';
 
 
-function NewNavbar() {
+function NewNavbar({ currentId, setCurrentId, selectModal }) {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -25,11 +25,7 @@ function NewNavbar() {
 
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
 
-  const [modal,setModal] = useState(false);
-
-    const selectModal = ()=>{
-        setModal(!modal);
-    }
+  
 
   const logout = () => {
     dispatch({ type: LOGOUT });
@@ -48,40 +44,37 @@ function NewNavbar() {
 
     setUser(JSON.parse(localStorage.getItem('profile')));
   }, [location]) // eslint-disable-line react-hooks/exhaustive-deps
-  
+
   return (
     <div className="header">
       <div className="logo">
-        <img src={memoriesLogo} alt="some img" height="45"/>
+        <img src={memoriesLogo} alt="some img" height="45" />
         <Link to="/">
-        <img src={memoriesText} alt="some img" height="55"/>
+          <img src={memoriesText} alt="some img" height="55" />
         </Link>
       </div>
       <div className="searchBar">
         <input type="text" placeholder="Search Here" />
       </div>
       {user ?
-      (<div className="header_icons">
-         <Modal
-                 displayModal={modal}
-                 closeModal={selectModal}
-          />
-        <Link to="/">
-          <img src={homeIcon} alt="home"/>
-        </Link>
-        <img src={addPost} onClick={selectModal} alt="add" style={{cursor: "pointer"}}/>
-        <img src={explore} alt="explore"/>
-        <Link to="/profile">
-        <Avatar alt={user?.result.name} src={user?.result.imageUrl}>{user?.result.name.charAt(0)}</Avatar>
-        </Link>
-        <buttton className="button logout" onClick={logout}>Logout</buttton>
-      </div>
-      ):
-      <div>
-        <Link to="/auth">
-        <button className="button signin">LOGIN</button>
-        </Link>
-      </div>
+        (<div className="header_icons">
+          
+          <Link to="/">
+            <img src={homeIcon} alt="home" />
+          </Link>
+          <img src={addPost} onClick={selectModal} alt="add" style={{ cursor: "pointer" }} />
+          <img src={explore} alt="explore" />
+          <Link to="/profile">
+            <Avatar alt={user?.result.name} src={user?.result.imageUrl}>{user?.result.name.charAt(0)}</Avatar>
+          </Link>
+          <buttton type="button" className="button logout" onClick={logout}>Logout</buttton>
+        </div>
+        ) :
+        <div>
+          <Link to="/auth">
+            <button type="button" className="button signin">LOGIN</button>
+          </Link>
+        </div>
       }
     </div>
   );

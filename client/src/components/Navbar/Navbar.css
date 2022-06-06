@@ -40,9 +40,11 @@
 }
 
 .header .header_icons {
-  /* display: flex;
-  flex-direction: row; */
-  margin-left: 8rem;
+  display: flex;
+  flex-direction: row;
+  /* margin-left: 8rem; */
+  align-items: center;
+  justify-content: space-between;
 }
 
 .header .header_icons img {
@@ -58,6 +60,7 @@
 }
 .logout{
   background-color: #dd3439;
+  margin-left: 1rem;
 }
 /* .signin{
   background-color: #24a0ed;

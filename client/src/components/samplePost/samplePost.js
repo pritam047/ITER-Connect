@@ -13,7 +13,7 @@ import moment from 'moment'
 
 // import { likePost, deletePost } from '../../actions/posts';
 
-const samplePost = ({ post, setCurrentId }) => {
+const samplePost = ({ post, setCurrentId, selectModal }) => {
   // const dispatch = useDispatch();
 
   const user = JSON.parse(localStorage.getItem('profile'));
@@ -36,18 +36,25 @@ const samplePost = ({ post, setCurrentId }) => {
           </div>
         </div>
         {(user?.result?.googleId === post?.creator || user?.result?._id === post?.creator) &&
-        (
-        <div style={{ float: "right" }}>
-          <img src="https://img.icons8.com/fluency-systems-regular/24/undefined/edit--v1.png" alt="edit" />
-        </div>
-        )}
+          (
+            <div className="editPost">
+              <img src="https://img.icons8.com/fluency-systems-regular/24/undefined/edit--v1.png"
+                alt="edit"
+                onClick={(e) => {
+                  selectModal();
+                  e.stopPropagation();
+                  setCurrentId(post._id);
+                }}
+              />
+            </div>
+          )}
       </div>
       <div className="userPost">
         <div className="caption">{post.message}</div>
         <div className="tags">{post.tags.map((tag) => `#${tag} `)}</div>
         <div className="imagePost">
           {/* <Avatar alt={user?.result.name} src={user?.result.imageUrl}>{user?.result.name.charAt(0)}</Avatar> */}
-          <img src={post.selectedFile} alt="efgs" />
+          <img src={post.selectedFile} onError={(e) => { e.target.onerror = null; e.target.src = "https://dummyimage.com/600x400/f2e9f2/0011ff&text=404+Not+Found" }} alt="banner" />
         </div>
       </div>
       <ReactionPanel post={post} user={user} />
