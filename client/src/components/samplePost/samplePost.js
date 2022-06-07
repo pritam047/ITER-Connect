@@ -6,8 +6,7 @@ import "./samplePost.css";
 import userPost from "./user_post.png";
 // import reyansh from "./square_image.jpeg";
 import ReactionPanel from "../ReactionPanel/ReactionPanel";
-
-
+import '../../App.css'
 
 import moment from 'moment'
 

@@ -17,14 +17,14 @@ import { LOGOUT } from '../../constants/actionTypes';
 import decode from 'jwt-decode';
 
 
-function NewNavbar({ currentId, setCurrentId, selectModal }) {
+function NewNavbar({ selectModal, darkMode, setDarkMode }) {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
 
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
-
+  const toggleDarkMode = () => setDarkMode(darkMode ? false : true);
   
 
   const logout = () => {
@@ -55,6 +55,9 @@ function NewNavbar({ currentId, setCurrentId, selectModal }) {
       </div>
       <div className="searchBar">
         <input type="text" placeholder="Search Here" />
+      </div>
+       <div onClick={toggleDarkMode}>
+          {darkMode ? <img src="https://img.icons8.com/external-smashingstocks-glyph-smashing-stocks/36/000000/external-night-time-smashingstocks-glyph-smashing-stocks.png" alt="night"/> : <img src="https://img.icons8.com/office/36/000000/sun--v1.png" alt="day"/>}
       </div>
       {user ?
         (<div className="header_icons">

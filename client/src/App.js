@@ -1,30 +1,17 @@
-import React from "react";
-// import { Container } from "@mui/material";
-// import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-
-import Home from "./components/Home/Home";
-// import Auth from "./components/Auth/Auth";
-// import PostDetails from "./components/PostDetails/PostDetails";
-
+import React, { useState } from "react";
+import { Navigate, Routes, Route, BrowserRouter } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-// import New_Navbar from "./components/Navbar/New Navbar.js";
-// import Trending from "./components/Trending/Trending.js";
-// import Blog from "./components/Blog/Blog.js";
-// import Wall from "./components/Wall/Wall.js";
-import {
-  Navigate,
-  Routes,
-  Route,
-  BrowserRouter,
-} from "react-router-dom";
+
+import './App.css';
+import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
-// import Register from "./components/Register/Register";
 import Profile from "./components/Profile/Profile";
 import CreateBlog from "./components/CreateBlog/CreateBlog";
 
 const theme = createTheme();
 const App = () => {
   const user = JSON.parse(localStorage.getItem("profile"));
+  const [darkMode, setDarkMode] = useState(false);
 
   return (
     // https://reactrouter.com/docs/en/v6/upgrading/v5#upgrade-to-react-router-v6
@@ -48,13 +35,15 @@ const App = () => {
     // </BrowserRouter>
     <BrowserRouter>
     <ThemeProvider theme={ theme }>
+      <div className="App" data-theme={darkMode ? "dark" : "light"}>
       <Routes>
       <Route path="/" exact element={<Navigate to="/posts" replace />} />
-      <Route path="/posts" exact element={<Home />} />
+      <Route path="/posts" exact element={<Home darkMode={darkMode} setDarkMode={setDarkMode}/>} />
       <Route path="/auth" element={user ? <Navigate to="/" />: <Login />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/createblog" element={<CreateBlog />} />
       </Routes>
+      </div>
       {/* <Routes>
         <Route path="/login" element={<Login />} />
       </Routes>

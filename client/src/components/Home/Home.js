@@ -8,17 +8,18 @@ import Trending from "../Trending/Trending.js";
 import Blog from "../Blog/Blog.js";
 import Wall from "../Wall/Wall.js";
 import NewNavbar from "../Navbar/New Navbar";
-
 import Modal from '../Modal/Modal'
+
+import '../../App.css'
 function useQuery() {
   return new URLSearchParams(useLocation().search);
 }
 
-const Home = () => {
+const Home = ({darkMode, setDarkMode}) => {
   const query = useQuery();
   const page = query.get("page") || 1;
   // const searchQuery = query.get("searchQuery");
-
+  
   const [currentId, setCurrentId] = useState(0);
   // const dispatch = useDispatch();
 
@@ -60,9 +61,12 @@ const Home = () => {
   const selectModal = () => {
     setModal(!modal);
   }
+  // const homeStyle = {
+  //   backgroundColor: "#ececec"
+  // }
   return (
-    <div style={{ backgroundColor: "#ececec" }}>
-      <NewNavbar currentId={currentId} setCurrentId={setCurrentId} selectModal={selectModal}/>
+    <div className="homeContainer">
+      <NewNavbar darkMode={darkMode} setDarkMode={setDarkMode} selectModal={selectModal}/>
       <Modal
             currentId={currentId}
             setCurrentId={setCurrentId}
