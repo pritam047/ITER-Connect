@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { Avatar } from "@mui/material";
+
 import "./Navbar.css";
+
 import memoriesLogo from "../../images/memories-Logo.png";
 import memoriesText from "../../images/connect1.png";
-
 import homeIcon from "./icons/home.png";
 import addPost from "./icons/addPost.png";
 import explore from "./icons/explore.png";
@@ -68,7 +68,10 @@ function NewNavbar({ selectModal, darkMode, setDarkMode }) {
           <img src={addPost} onClick={selectModal} alt="add" style={{ cursor: "pointer" }} />
           <img src={explore} alt="explore" />
           <Link to="/profile">
-            <Avatar alt={user?.result.name} src={user?.result.imageUrl}>{user?.result.name.charAt(0)}</Avatar>
+          <div className="header_avatar">
+            <img src="https://picsum.photos/seed/picsum/300/300" alt="avatar"/>
+          </div>
+            {/* <Avatar alt={user?.result.name} src={user?.result.imageUrl}>{user?.result.name.charAt(0)}</Avatar> */}
           </Link>
           <buttton type="button" className="button logout" onClick={logout}>Logout</buttton>
         </div>
