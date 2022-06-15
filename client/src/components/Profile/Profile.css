@@ -8,14 +8,6 @@
   margin: 0;
 }
 
-.profile_img{
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    margin: 10px auto;
-    border: 10px solid #ccc;
-    border-radius: 50%;
-}
 .profile_container .info_container {
   /* background-color: white; */
   width: 40rem;
@@ -66,4 +58,28 @@
 .profile_container .info_container .profile_info .profile_bio .bio {
   font-family: "Josefin Sans", sans-serif;
   font-size: 0.9rem;
+}
+.image_div{
+  display: flex;
+  padding: 16px;
+  position: relative;
+}
+.profile_img{
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin: 10px auto;
+  border: 10px solid #ccc;
+  border-radius: 50%;
+}
+.image_div .addImgIcon{
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    background: #0863a0 url("https://img.icons8.com/carbon-copy/48/undefined/plus--v1.png");
+    border-radius: 50%;
+    bottom: 24px;
+    right: 24px;
+    cursor: pointer;
+    /* border: 8px solid #fff; */
 }

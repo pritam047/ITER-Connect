@@ -1,9 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+body{
+    font-family: 'Quicksand', sans-serif;
+}
 .main_container_blog{
     width: 100%;
+    height: 100vh;
     /* height: 100%; */
     /* background-color: red; */
     /* display: flex;
     flex-direction: column; */
+}
+.blogs-container{
+    background: #7f7fd5;
+  background: linear-gradient(to right, #91eae4, #86a8e7, #7f7fd5);
 }
 
 .main_container_blog .edit_container{
@@ -19,7 +28,7 @@
 
 .main_container_blog .createBlog span{
     font-size: 1.5rem;
-    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
     opacity: 75%;
 }
 
@@ -40,11 +49,15 @@
 
 .main_container_blog .body_container{
     width: 100%;
-    height: 35rem;
+    height: auto;
     /* background-color: black; */
     margin-left: 1rem;
-    display: flex;
-    justify-content: center;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 .main_container_blog .body_container textarea{
@@ -56,7 +69,7 @@
     padding-left: 1rem;
     padding-top: 1rem;
     font-size: 1rem;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     resize: none;
 }
 
@@ -85,7 +98,7 @@
 
 .main_container_blog .function_container .blog_settings span{
     font-size: 1.25rem;
-    font-family: 'Raleway', sans-serif;
+    /* font-family: 'Raleway', sans-serif; */
     /* margin-top: 2rem; */
 }
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./Profile.css";
 import NewNavbar from "../Navbar/New Navbar";
 // import profileImage from "./sample_profile_image.png";
@@ -18,15 +18,24 @@ function Profile() {
   //     }}
   //   />
   // );
+  const fileInput = useRef();
 
+  const selectFile = () => {
+      fileInput.current.click();
+  }
   return (
     <div>
       <NewNavbar />
       <div className="profile_container">
         <div className="info_container">
-          <div className="image_div">
+          
+          <div className="image_div"> 
             <img className="profile_img" src="https://source.unsplash.com/600x300/?student" alt="profile dp" />
+            
+            <input type="file" style={{ "display": "none" }} ref={fileInput} multiple="false" accept="image/*;capture=camera"/>
+            <span className="addImgIcon" onClick={ selectFile }></span>
           </div>
+          
           <div className="profile_info">
             <span>{ user?.result.name }</span>
             <div className="profile_deets">
@@ -43,6 +52,7 @@ function Profile() {
               </span>
             </div>
           </div>
+          
         </div>
       </div>
     </div>

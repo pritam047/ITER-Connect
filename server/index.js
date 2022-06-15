@@ -8,6 +8,7 @@ import 'dotenv/config';
 // require("dotenv").config();
 import postRoutes from './routes/posts.js';
 import userRoutes from './routes/users.js';
+import blogRoutes from './routes/blogs.js';
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(cors());
 
 app.use('/posts', postRoutes);
 app.use('/user', userRoutes);
+app.use('/blogs', blogRoutes);
 
 app.get('/', (req,res)=>{
     res.send('Welcome to Memories API');
