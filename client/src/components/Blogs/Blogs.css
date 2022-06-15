@@ -1,0 +1,10 @@
+.blog-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 1200px;
+    padding: 2rem;
+    margin-block: 2rem;
+    gap: 2rem;
+  }
