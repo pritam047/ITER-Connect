@@ -8,6 +8,8 @@ import Login from "./components/Login/Login";
 import Profile from "./components/Profile/Profile";
 import CreateBlog from "./components/CreateBlog/CreateBlog";
 import Blogs from "./components/Blogs/Blogs";
+import Clubs from "./components/Clubs/Clubs";
+
 // import NewNavbar from "./components/Navbar/New Navbar";
 const theme = createTheme();
 const App = () => {
@@ -45,6 +47,7 @@ const App = () => {
       <Route path="/profile" element={<Profile />} />
       <Route path="/createblog" element={user ? <CreateBlog /> : <Navigate to='/auth' />} />
       <Route path="/blogs" element={<Blogs />} />
+      <Route path="/clubs" element={<Clubs />} />
       </Routes>
       </div>
       {/* <Routes>

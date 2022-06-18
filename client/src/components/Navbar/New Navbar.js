@@ -88,7 +88,7 @@ function NewNavbar({ selectModal, darkMode, setDarkMode }) {
           <img src={explore} alt="explore" />
           <Link to="/profile">
           <div className="header_avatar">
-            <img src={user?.result?.imageUrl || "https://picsum.photos/seed/picsum/300/300"} onError={(e) => { e.target.onerror = null; e.target.src = "https://picsum.photos/seed/picsum/300/300" }} alt="avatar"/>
+            <img src={user?.result?.imageUrl || `https://ui-avatars.com/api/?background=0D8ABC&color=fff&name=${user?.result?.name}`} onError={(e) => { e.target.onerror = null; e.target.src = `https://ui-avatars.com/api/?background=0D8ABC&color=fff&name=${user?.result?.name}` }} alt="avatar"/>
           </div>
             {/* <Avatar alt={user?.result.name} src={user?.result.imageUrl}>{user?.result.name.charAt(0)}</Avatar> */}
           </Link>

@@ -1,0 +1,106 @@
+.clubs-container {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #2b83ca;
+  /* background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1124&q=100');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+}
+.club-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 1em 3em;
+  padding: 20px;
+  /* background-color: aqua; */
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.75);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}
+.club-box:nth-of-type(even) {
+	flex-direction: row-reverse;
+}
+.club-info {
+  display: flex;
+  flex-direction: column;
+  width: 47%;
+  gap: 1rem;
+  color: #2ec969;
+}
+.club-img {
+    width: 47%;  
+    border-radius: 30%;
+    display: flex;
+    justify-content :flex-end !important;
+  }
+.club-img:nth-of-type(even){
+    justify-content: flex-start;
+}    
+  .club-img img {
+    object-fit: cover;
+  }
+.club-socio-handles {
+  display: -ms-flexbox;
+  display: flex;
+  /* -ms-flex-wrap: wrap; */
+  /* flex-wrap: wrap; */
+  height: 100%;
+  width: 100%;
+  margin-right: -15px;
+  /* margin-left: -15px; */
+  padding-top: 1rem;
+  gap: 2.5rem;
+  margin-bottom: 0.5rem;
+  -ms-flex-pack: center;
+  /* justify-content: center;
+  align-items: center; */
+}
+.club-socio-handles .nav-item {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  text-decoration: none;
+  width: 40px;
+  height: 40px;
+}
+/* .club-socio-handles .nav-link-text {
+  font-size: 0.675rem;
+  line-height: 1.25rem;
+  font-weight: 550;
+  text-align: center;
+  font-family: inherit;
+  color: #eee !important;
+} */
+
+.club-socio-handles .transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.15s;
+}
+
+.club-socio-handles .nav-links {
+  color: rgba(255, 51, 51, 0.8);
+  background-color: rgb(62, 76, 90);
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+}
+.club-socio-handles .nav-links:hover {
+  background-color: rgba(255, 51, 51, 0.8);
+  color: #eee !important;
+  transform: scaleX(1.1) scaleY(1.1);
+}
+
+.club-name {
+  font-weight: bold;
+  font-size: 2em;
+}
+
