@@ -60,7 +60,7 @@ const Form = forwardRef(({currentId, setCurrentId, closeModal}, ref) => {
     return (
         // <Paper className={classes.paper} elevation={6}>
             <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
-                <Typography variant="h6">{currentId ? 'Editing' : 'Creating'} a Memory</Typography>
+                <Typography variant="h6">{currentId ? 'Editing' : 'Creating'} a Post</Typography>
                 <TextField name="title" variant="outlined" label="Title *" fullWidth
                     value={postData.title}
                     onChange={(e) => setPostData({ ...postData, title: e.target.value })} />

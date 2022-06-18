@@ -10,8 +10,10 @@
   }
   .card {
     display: flex;
+    flex: 1;
     flex-direction: column;
     width: clamp(20rem, calc(20rem + 2vw), 22rem);
+    /* width: 100%; */
     overflow: hidden;
     box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
     border-radius: 1em;
@@ -19,8 +21,11 @@
     background: linear-gradient(to right, #FFFFFF, #ECE9E6);
   
   }
-  
-  
+  /* .head__body{
+    display: flex;
+    flex-direction: column;
+  }
+   */
   
   .card__body {
     padding: 1rem;

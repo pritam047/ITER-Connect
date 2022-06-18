@@ -2,15 +2,20 @@ import React, { useState } from "react";
 import FileBase from 'react-file-base64';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 import NewNavbar from "../Navbar/New Navbar";
-import Blogs from "../Blogs/Blogs";
 import "./CreateBlog.css";
 
 import { createBlog } from '../../actions/blogs';
 function CreateBlog() {
-    const [blogData, setBlogData] = useState({ title: '', body: '', image: '' });
+    document.title = 'ITER Connect | Blogs';
+
+    const [file, setFile] = useState(null);
+    const [blogData, setBlogData] = useState({ title: '', body: '' });
     const [count, setCount] = useState(0);
+
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -21,12 +26,14 @@ function CreateBlog() {
       };
     const clear = () => {
         // setCurrentId(0);
-        setBlogData({ title: '', body: '', image: '' });
+        setFile(null);
+        setBlogData({ title: '', body: '' });
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(createBlog({ ...blogData, name: user?.result?.name }, navigate));
+        dispatch(createBlog({ ...blogData, image: file, name: user?.result?.name }, navigate));
+        toast.success('Blog successfully added!');
         clear();
     }
 
@@ -34,6 +41,7 @@ function CreateBlog() {
         <>
         <div className="main_container_blog">
             <NewNavbar />
+            <ToastContainer autoClose={3000}/>
             <form autoComplete="off" noValidate onSubmit={handleSubmit}>
                 <div style={{ display: "flex" }}>
                     <div className="edit_container">
@@ -57,7 +65,7 @@ function CreateBlog() {
                         {/* <div style={{textAlign : "center"}}><small>Max. characters 800/800</small></div> */}
                         <div className="fileInput">
                             <FileBase type="file" multiple={false}
-                                onDone={({ base64 }) => setBlogData({ ...blogData, image: base64 })} />
+                                onDone={({ base64 }) => setFile(base64)} />
                         </div>
                     </div>
                     <div className="function_container">
@@ -82,9 +90,6 @@ function CreateBlog() {
 
             
         </div>
-        <div className="blogs-container">
-        <Blogs/>
-    </div>
     </>
     )
 }

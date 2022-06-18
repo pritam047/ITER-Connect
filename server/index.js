@@ -22,7 +22,7 @@ app.use('/user', userRoutes);
 app.use('/blogs', blogRoutes);
 
 app.get('/', (req,res)=>{
-    res.send('Welcome to Memories API');
+    res.send('Welcome to ITER-Connect API');
 })
 
 const PORT = process.env.PORT || 5000;

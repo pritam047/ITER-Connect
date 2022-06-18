@@ -33,11 +33,12 @@ export const getPosts = async(req, res) =>{
 
 // GET Posts by search params and tags
 export const getPostsBySearch = async(req, res) =>{
-    const { searchQuery, tags} = req.query;
-    // console.log("fsgsg = ",req.query);
+    console.log("fsgsg = ",req.query);
+    const { searchQuery } = req.query;
     try {
-        const title = new RegExp(searchQuery, 'i');
-        const posts = await PostMessage.find({$or: [ { title }, { tags : { $in : tags.split(',') } } ]}
+        const title = new RegExp(searchQuery, "i");
+        console.warn(title);
+        const posts = await PostMessage.find({title: title});
         // ,function (err,res) {
         //     if (err) {
         //         console.log(err);
@@ -45,7 +46,7 @@ export const getPostsBySearch = async(req, res) =>{
         //         console.log("fgdf", res);
         //       }
         // }
-        )
+        
                 
         res.json({data: posts});
     } catch (error) {

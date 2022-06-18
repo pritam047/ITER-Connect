@@ -7,7 +7,8 @@ import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import Profile from "./components/Profile/Profile";
 import CreateBlog from "./components/CreateBlog/CreateBlog";
-
+import Blogs from "./components/Blogs/Blogs";
+// import NewNavbar from "./components/Navbar/New Navbar";
 const theme = createTheme();
 const App = () => {
   const user = JSON.parse(localStorage.getItem("profile"));
@@ -39,9 +40,11 @@ const App = () => {
       <Routes>
       <Route path="/" exact element={<Navigate to="/posts" replace />} />
       <Route path="/posts" exact element={<Home darkMode={darkMode} setDarkMode={setDarkMode}/>} />
+      <Route path="/posts/search" exact element={<Home darkMode={darkMode} setDarkMode={setDarkMode}/>} />
       <Route path="/auth" element={user ? <Navigate to="/" />: <Login />} />
       <Route path="/profile" element={<Profile />} />
-      <Route path="/createblog" element={<CreateBlog />} />
+      <Route path="/createblog" element={user ? <CreateBlog /> : <Navigate to='/auth' />} />
+      <Route path="/blogs" element={<Blogs />} />
       </Routes>
       </div>
       {/* <Routes>

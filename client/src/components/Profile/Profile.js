@@ -32,8 +32,11 @@ function Profile() {
           <div className="image_div"> 
             <img className="profile_img" src="https://source.unsplash.com/600x300/?student" alt="profile dp" />
             
-            <input type="file" style={{ "display": "none" }} ref={fileInput} multiple="false" accept="image/*;capture=camera"/>
+            <input type="file" style={{ "display": "none" }} ref={fileInput} multiple={false} accept="image/*;capture=camera"/>
             <span className="addImgIcon" onClick={ selectFile }></span>
+            <div>
+				<button >Upload</button>
+			</div>
           </div>
           
           <div className="profile_info">

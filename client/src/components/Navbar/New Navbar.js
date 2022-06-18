@@ -11,7 +11,7 @@ import addPost from "./icons/addPost.png";
 import explore from "./icons/explore.png";
 // import userProfileIcon from "./icons/user.png";
 
-
+import { getPostsBySearch } from "../../actions/posts";
 
 import { LOGOUT } from '../../constants/actionTypes';
 import decode from 'jwt-decode';
@@ -24,8 +24,23 @@ function NewNavbar({ selectModal, darkMode, setDarkMode }) {
   const location = useLocation();
 
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
+  const [search, setSearch] = useState('');
   const toggleDarkMode = () => setDarkMode(darkMode ? false : true);
   
+  const searchPost = () => {
+    if (search.trim()) {
+      dispatch(getPostsBySearch({ search }));
+      navigate(`/posts/search?searchQuery=${search || 'none'}`, {replace: true});
+  } else {
+      navigate('/');
+  }
+  }
+
+  const handleKeyPress = (e) => {
+    if (e.keyCode === 13) {
+        searchPost();
+    }
+};
 
   const logout = () => {
     dispatch({ type: LOGOUT });
@@ -54,7 +69,11 @@ function NewNavbar({ selectModal, darkMode, setDarkMode }) {
         </Link>
       </div>
       <div className="searchBar">
-        <input type="text" placeholder="Search Here" />
+        <input type="text" placeholder="Search Here" name="search" onKeyDown={handleKeyPress} value={search} onChange={(e) => setSearch(e.target.value)}/>
+        <span className="search_img" onClick={searchPost}>
+          <img src="https://img.icons8.com/fluency-systems-regular/24/undefined/search--v1.png" 
+          alt="searchbar"/>
+        </span>
       </div>
        <div onClick={toggleDarkMode}>
           {darkMode ? <img src="https://img.icons8.com/external-smashingstocks-glyph-smashing-stocks/36/000000/external-night-time-smashingstocks-glyph-smashing-stocks.png" alt="night"/> : <img src="https://img.icons8.com/office/36/000000/sun--v1.png" alt="day"/>}
@@ -69,7 +88,7 @@ function NewNavbar({ selectModal, darkMode, setDarkMode }) {
           <img src={explore} alt="explore" />
           <Link to="/profile">
           <div className="header_avatar">
-            <img src="https://picsum.photos/seed/picsum/300/300" alt="avatar"/>
+            <img src={user?.result?.imageUrl || "https://picsum.photos/seed/picsum/300/300"} onError={(e) => { e.target.onerror = null; e.target.src = "https://picsum.photos/seed/picsum/300/300" }} alt="avatar"/>
           </div>
             {/* <Avatar alt={user?.result.name} src={user?.result.imageUrl}>{user?.result.name.charAt(0)}</Avatar> */}
           </Link>

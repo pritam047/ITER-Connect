@@ -7,12 +7,14 @@ function Blog() {
   return (
     <div className="blog_container">
       <div className="smaller_container">
-        <Link to="/createblog">
           <div className="title_container">
+          <Link to="/blogs">
             <p className="title_blog">Blogs</p>
-            <img src={addBlog} />
+        </Link>&nbsp;&nbsp;&nbsp;
+        <Link to="/createblog">
+            <img src={addBlog} alt="somepic"/>
+          </Link>
           </div>
-        </Link>
         <div className="blog_list">
           <div className="individual_blog" style={{ marginTop: "0rem" }}>
             <span className="blog_title">Blog Title</span>

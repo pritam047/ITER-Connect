@@ -23,9 +23,23 @@
 
 .header .searchBar {
   margin-left: 8rem;
+  display: flex;
+  align-items: center;
+}
+.search_img{
+  position: absolute;
+  cursor: pointer;
+  margin-top: 8px;
+  /* top: 80%; */
+  left: 70%;
+  bottom: 93%;
+  /* float: right; */
+  /* margin-left: -10px; */
+  /* padding-top: 10px; */
 }
 
 .header .searchBar input {
+  position: relative;
   border-radius: 0.7rem;
   border: none;
   width: 15rem;
@@ -34,10 +48,10 @@
   background-color: #dcdcdc;
 }
 
-.header .searchBar img {
+/* .header .searchBar img {
   width: 2%;
   height: 2%;
-}
+} */
 .header_avatar{
   display: flex;
   padding: 8px;
