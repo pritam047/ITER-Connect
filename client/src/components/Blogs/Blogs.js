@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { CircularProgress } from '@mui/material';
+// import { CircularProgress } from '@mui/material';
+import Loader from '../Loader/Loader.jsx';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchBlogs } from '../../actions/blogs';
 
@@ -18,7 +19,7 @@ const Blogs = () => {
     // if(!blogs.length && !isLoading) return 'No posts yet. We will be more than happy to see you create one.😃';
 
     return (
-        isLoading ? <CircularProgress /> : (
+        isLoading ? <Loader /> : (
             <>
             <NewNavbar/>
             <div className='blogs_page'>
