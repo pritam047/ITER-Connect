@@ -4,8 +4,8 @@ import { useDispatch } from 'react-redux';
 
 import "./Navbar.css";
 
-import memoriesLogo from "../../images/memories-Logo.png";
-import memoriesText from "../../images/connect1.png";
+import connectLogo from "../../images/memories-Logo.png";
+import connectText from "../../images/connect1.png";
 import homeIcon from "./icons/home.png";
 import addPost from "./icons/addPost.png";
 import explore from "./icons/explore.png";
@@ -63,9 +63,9 @@ function NewNavbar({ selectModal, darkMode, setDarkMode }) {
   return (
     <div className="header">
       <div className="logo">
-        <img src={memoriesLogo} alt="some img" height="45" />
+        <img src={connectLogo} alt="some img" height="45" />
         <Link to="/">
-          <img src={memoriesText} alt="some img" height="55" />
+          <img src={connectText} alt="some img" height="55" />
         </Link>
       </div>
       <div class="search-group">
@@ -79,7 +79,7 @@ function NewNavbar({ selectModal, darkMode, setDarkMode }) {
           alt="searchbar"/>
         </span>
       </div> */}
-       <div onClick={toggleDarkMode}>
+       <div style={{cursor: "pointer"}} onClick={toggleDarkMode}>
           {darkMode ? <img src="https://img.icons8.com/external-smashingstocks-glyph-smashing-stocks/36/000000/external-night-time-smashingstocks-glyph-smashing-stocks.png" alt="night"/> : <img src="https://img.icons8.com/office/36/000000/sun--v1.png" alt="day"/>}
       </div>
       {user ?
@@ -92,7 +92,11 @@ function NewNavbar({ selectModal, darkMode, setDarkMode }) {
           <img src={explore} alt="explore" />
           <Link to="/profile">
           <div className="header_avatar">
-            <img src={user?.result?.imageUrl || `https://ui-avatars.com/api/?background=0D8ABC&color=fff&name=${user?.result?.name}`} onError={(e) => { e.target.onerror = null; e.target.src = `https://ui-avatars.com/api/?background=0D8ABC&color=fff&name=${user?.result?.name}` }} alt="avatar"/>
+            <img
+            src={user?.result?.imageUrl || `https://ui-avatars.com/api/?background=0D8ABC&color=fff&name=${user?.result?.name}`} 
+            onError={(e) => { e.target.onerror = null; e.target.src = `https://ui-avatars.com/api/?background=0D8ABC&color=fff&name=${user?.result?.name}` }} 
+            alt="avatar"
+            />
           </div>
             {/* <Avatar alt={user?.result.name} src={user?.result.imageUrl}>{user?.result.name.charAt(0)}</Avatar> */}
           </Link>
@@ -101,7 +105,7 @@ function NewNavbar({ selectModal, darkMode, setDarkMode }) {
         ) :
         <div>
           <Link to="/auth">
-            <button type="button" className="button signin">LOGIN</button>
+            <button type="button" className="button signin">Login</button>
           </Link>
         </div>
       }

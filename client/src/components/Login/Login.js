@@ -1,7 +1,7 @@
 import React, { useState} from "react";
 import { GoogleLogin } from 'react-google-login';
 import {useDispatch} from 'react-redux';
-import { useNavigate} from 'react-router-dom';
+import { useNavigate, Link} from 'react-router-dom';
 
 import "./Login.css";
 import memoriesLogo from "../../images/memories-Logo.png";
@@ -74,7 +74,9 @@ function Login() {
       <div className="center_div">
         <div className="image_login">
           <img src={memoriesLogo} alt="sgdfhd"/>
+          <Link to='/' style={{ textDecoration: 'none' }}>
           <span>ITER Connect</span>
+          </Link>
         </div>
         <div><h2 style={{textAlign: "center"}}>{isSignup ? 'Sign up' : 'Sign in'}</h2></div>
         
@@ -82,11 +84,12 @@ function Login() {
         <div className="input_login">
         {isSignup && (
               <>
+              <input className="username" placeholder="enter a cool username" name="username" label="Username" onChange={handleChange} />
                 <input className="firstname" placeholder="First Name" name="firstName" label="First Name" onChange={handleChange} autoFocus />
                 <input className="lastname" placeholder="Last Name" name="lastName" label="Last Name" onChange={handleChange} />
               </>
             )}
-          <input className="username" placeholder="enter a cool username" name="email" label="Email Address" onChange={handleChange} type="email" />
+          <input className="email" placeholder="enter your email here" name="email" label="Email Address" onChange={handleChange} type="email" />
           {/* handleShowPassword={handleShowPassword} */}
           <input className="password" placeholder="enter password" name="password" label="Password" onChange={handleChange} type={showPassword ? 'text' : 'password'} />
           {isSignup && <input className="password" placeholder="repeat above password to confirm" name="confirmPassword" label="Repeat Password" onChange={handleChange} type="password" />}

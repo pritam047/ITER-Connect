@@ -23,6 +23,21 @@ export const signin = async (req, res) => {
   }
 };
 
+export const updateUser = async(req,res) => {
+  const { id } = req.params;
+  const { imageUrl } = req.body;
+  let url = imageUrl.split('upload/');
+  const finalUrl = url[0] + 'upload/w_150,h_150,c_fill,g_face,r_max/' + url[1].split('/')[1]
+  try{
+  const editedInfo = await UserModel.findByIdAndUpdate(id, {imageUrl: finalUrl}, { new: true });
+
+  res.json(editedInfo);
+  }
+  catch(err){
+    res.status(500).json({ message: "Something went wrong" });
+  }
+
+}
 export const signup = async (req, res) => {
   const { email, password, firstName, lastName } = req.body;
 

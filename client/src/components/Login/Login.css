@@ -41,7 +41,7 @@
   /* height: 4rem; */
 }
 
-.container_login .center_div .input_login .username, .password, .firstname, .lastname {
+.container_login .center_div .input_login .username, .password, .firstname, .lastname, .email {
   width: 70%;
   height: 2rem;
   border-radius: 0.2rem;

@@ -23,40 +23,6 @@ const Home = ({darkMode, setDarkMode}) => {
   // const searchQuery = query.get("searchQuery");
   
   const [currentId, setCurrentId] = useState(0);
-  // const dispatch = useDispatch();
-
-  // const [search, setSearch] = useState("");
-  // const [tags, setTags] = useState([]);
-  // const navigate = useNavigate();
-
-  // const searchPost = () => {
-  //   if (search.trim() || tags) {
-  //     dispatch(getPostsBySearch({ search, tags: tags.join(",") }));
-  //     navigate(
-  //       `/posts/search?searchQuery=${search || "none"}&tags=${tags.join(",")}`,
-  //       { replace: true }
-  //     );
-  //   } else {
-  //     navigate("/");
-  //   }
-  // };
-
-  // const handleKeyPress = (e) => {
-  //   if (e.keyCode === 13) {
-  //     searchPost();
-  //   }
-  // };
-
-  // const handleAddChip = (tag) => setTags([...tags, tag]);
-  // const handleDeleteChip = (chipToDelete) =>
-  //   setTags(tags.filter((tag) => tag !== chipToDelete));
-
-  // useEffect(() => {
-  //     dispatch(getPosts());
-  // }, [currentId, dispatch])
-  // const getMod = (selectModal) =>{
-  //   selectModal();
-  // }
 
   const [modal, setModal] = useState(false);
 
