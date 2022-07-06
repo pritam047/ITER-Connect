@@ -1,5 +1,5 @@
 .blog_container {
-  width: 33.33%;
+  width: 90%;
   /* text-align: center; */
 }
 
@@ -8,7 +8,7 @@
   width: 90%;
   height: fit-content;
   border-radius: 1rem;
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
   margin-top: 1rem;
 }
 
@@ -26,8 +26,9 @@
 }
 
 .blog_container .smaller_container .title_container img {
-  width: 5%;
-  height: 5%;
+  float: right;
+  width: 8%;
+  height: 8%;
 }
 
 .blog_container .smaller_container .title_container img:hover {
@@ -42,12 +43,16 @@
   padding-left: 2rem;
   display: flex;
   flex-direction: column;
-  margin-top: 1rem;
+  margin: 1rem 1rem 0 0;
+  
 }
 
 .blog_container .smaller_container .blog_list .individual_blog .blog_title {
-  font-size: 1rem;
-  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.2rem;
+  color: #000;
+  /* font-weight: bold; */
+  text-transform: capitalize;
+  /* font-family: "Josefin Sans", sans-serif; */
 }
 
 .blog_container
@@ -58,4 +63,87 @@
   font-size: 0.9rem;
   width: 85%;
   color: gray;
+}
+.explore-blogs-btn {
+  cursor: pointer;
+  font-weight: 700;
+  font-family: inherit;
+  transition: all .2s;
+  padding: 10px 20px;
+  border-radius: 100px;
+  background: #b4c8ea;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+.explore-blogs-btn:hover {
+  background: #91a8d0;
+  letter-spacing: 0.1rem;
+}
+
+.explore-blogs-btn > svg {
+  width: 34px;
+  margin-left: 10px;
+  transition: transform .3s ease-in-out;
+}
+
+.explore-blogs-btn:hover svg {
+  transform: translateX(5px);
+}
+
+.explore-blogs-btn:active {
+  transform: scale(0.95);
+}
+
+/* .explore-blogs-btn{
+  border-radius: 6px;
+  border: 0px solid;
+  padding: 10px 5px;
+  background-color: #9c89f7;
+  font-family: inherit;
+  font-weight: bold;
+}
+.explore-blogs-btn:hover{
+  cursor: pointer;
+  background-color: #8675db;
+} */
+.clubs-home-container{
+  width: 80%;
+  text-align: center;
+  border-radius: 1rem;
+  margin-top: 1rem;
+  background-color: #fff;
+
+}
+.clubs-home-container h2{
+  transition: 1s all;
+  color: #6495ed;
+}
+.clubs-home-container h2:hover{
+  transform: scale(1.2);
+  /* transform: rotateY(360deg); */
+}
+
+.blogs__house .btn-1 {
+  color: #9c89f7;
+}
+.blogs__house .btn-1:hover {
+  -webkit-animation: halftone 1s forwards;
+          animation: halftone 1s forwards;
+  background: radial-gradient(circle, #9c89f7 0.2em, transparent 0.25em) 0 0/1.25em 1.25em, radial-gradient(circle, #9c89f7 0.2em, transparent 0.25em) 6.25em 6.25em/1.25em 1.25em;
+  color: #e4f789;
+}
+
+@-webkit-keyframes halftone {
+  100% {
+    background-size: 2.375em 2.375em, 0.1em 0.1em;
+  }
+}
+
+@keyframes halftone {
+  100% {
+    background-size: 2.375em 2.375em, 0.1em 0.1em;
+  }
 }

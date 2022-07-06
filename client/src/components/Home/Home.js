@@ -45,15 +45,16 @@ const Home = ({darkMode, setDarkMode}) => {
         style={{
           width: "100%",
           display: "flex",
-          // textAlign: "justify",
-          // backgroundColor: "red",
-          justifyContent: "center",
+          justifyContent: "space-between",
         }}
       >
         <Trending />
         {/* <span style={{ width: "50%", textAlign: "center" }}>ayush</span> */}
         <Wall setCurrentId={setCurrentId} selectModal={selectModal}/>
+        {/* <div style={{display: "flex", flexDirection: "column", alignItems: "stretch"}}> */}
         <Blog />
+        {/* <div><h2>Explore Clubs</h2></div> */}
+        {/* </div> */}
         <Pagination page={page} />
       </div>
     </div>

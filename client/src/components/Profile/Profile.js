@@ -10,24 +10,6 @@ function Profile() {
   document.title = "ITER Connect | Profile";
   const user = JSON.parse(localStorage.getItem('profile'));
 
-  // const [image, setImage] = useState("");
-  // const fileInput = useRef();
-
-  // const selectFile = () => {
-  //   fileInput.current.click();
-  // }
-
-  // const uploadImage = () => {
-  //   const formData = new FormData();
-  //   formData.append('file', image);
-  //   formData.append('upload_preset', 'nxazxpzl');
-
-  //   axios.post(`https://api.cloudinary.com/v1_1/proxyz-in/image/upload`, formData)
-  //     .then((response) => console.log(response))
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }
   return (
     <div>
       <NewNavbar />
@@ -35,14 +17,9 @@ function Profile() {
         <div className="info_container">
 
           <div className="image_div">
-            {/* <img className="profile_img" src={user?.result?.imageUrl || "https://source.unsplash.com/600x300/?student"} alt="profile dp" /> */}
-            <img className="profile_img" src={user?.result?.imageUrl || defaultUser } alt="profile" />
-            {/* <input type="file" style={{ "display": "none" }} ref={fileInput} onChange={(e)=> setImage(e.target.files[0])} multiple={false} accept="image/*;capture=camera"/> */}
-            {/* <span className="addImgIcon" onClick={ selectFile }></span> */}
-            {/* <CloudinaryUploadWidget/> */}
+            <img className="profile_img" src={user?.result?.imageUrl || defaultUser} alt="profile" />
             <div>
-              {/* <button onClick={uploadImage}>Upload</button> */}
-              <CloudinaryUploadWidget user={user}/>
+              <CloudinaryUploadWidget user={user} />
             </div>
           </div>
 
