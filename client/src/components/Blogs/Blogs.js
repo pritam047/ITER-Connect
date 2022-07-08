@@ -4,7 +4,6 @@ import Loader from '../Loader/Loader.jsx';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchBlogs } from '../../actions/blogs';
 
-import NewNavbar from '../Navbar/New Navbar';
 import Blog from './Blog/Blog';
 import './Blogs.css';
 
@@ -21,7 +20,6 @@ const Blogs = () => {
     return (
         isLoading ? <Loader /> : (
             <>
-            <NewNavbar/>
             <div className='blogs_page'>
             <h1 style={{textAlign:"center"}}>Blogs</h1>
             <div className="blog-container">

@@ -9,11 +9,11 @@ const Blog = ({ blog }) => {
         <div className="card__header">
           <img src={blog.image || "https://dummyimage.com/600x400/f2e9f2/0011ff&text=404+Not+Found"} onError={(e) => { e.target.onerror = null; e.target.src = "https://dummyimage.com/600x400/f2e9f2/0011ff&text=404+Not+Found" }} alt="card__image" className="card__image" width="600" />
         </div>
-        <div class="card__body">
+        <div className="card__body">
           <span className="tag tag-blue">Technology</span>
           <h4>{blog.title}</h4>
           <p>{blog.body.substring(0, 100)}...</p>
-          <button className='read_button'>Read More</button>
+          <button type='button' className='read_button'>Read More</button>
         </div>
       </div>
       <div className="card__footer">

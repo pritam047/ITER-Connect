@@ -5,7 +5,6 @@ import { useDispatch } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
 
-import NewNavbar from "../Navbar/New Navbar";
 import "./CreateBlog.css";
 
 import { createBlog } from '../../actions/blogs';
@@ -40,7 +39,6 @@ function CreateBlog() {
     return (
         <>
         <div className="main_container_blog">
-            <NewNavbar />
             <ToastContainer autoClose={3000}/>
             <form autoComplete="off" noValidate onSubmit={handleSubmit}>
                 <div style={{ display: "flex" }}>

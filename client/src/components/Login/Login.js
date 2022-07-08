@@ -1,13 +1,13 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import { GoogleLogin } from 'react-google-login';
-import {useDispatch} from 'react-redux';
-import { useNavigate, Link} from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useNavigate, Link } from 'react-router-dom';
 
 import "./Login.css";
 import memoriesLogo from "../../images/memories-Logo.png";
 
 import { signin, signup } from '../../actions/auth';
-import {AUTH} from '../../constants/actionTypes';
+import { AUTH } from '../../constants/actionTypes';
 
 const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' };
 
@@ -28,8 +28,8 @@ function Login() {
     setShowPassword(false);
   }
 
-  const handleChange = (e) => 
-  setForm({ ...form, [e.target.name]: e.target.value });
+  const handleChange = (e) =>
+    setForm({ ...form, [e.target.name]: e.target.value });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -41,7 +41,7 @@ function Login() {
     }
   }
   const googleSuccess = async (res) => {
-    const result = res?.profileObj;    // get properties like firstname, lastname, email, etc. pf user
+    const result = res?.profileObj;    // get properties like firstname, lastname, email, etc. of user
     const token = res?.tokenId;
 
     try {
@@ -73,62 +73,68 @@ function Login() {
     <div className="container_login">
       <div className="center_div">
         <div className="image_login">
-          <img src={memoriesLogo} alt="sgdfhd"/>
+          <img src={memoriesLogo} alt="sgdfhd" />
           <Link to='/' style={{ textDecoration: 'none' }}>
-          <span>ITER Connect</span>
+            <span>ITER Connect</span>
           </Link>
         </div>
-        <div><h2 style={{textAlign: "center"}}>{isSignup ? 'Sign up' : 'Sign in'}</h2></div>
-        
+        <div><h2 style={{ textAlign: "center" }}>{isSignup ? 'Sign up' : 'Sign in'}</h2></div>
+
         <form onSubmit={handleSubmit}>
-        <div className="input_login">
-        {isSignup && (
-              <>
-              <input className="username" placeholder="enter a cool username" name="username" label="Username" onChange={handleChange} />
+          <div className="input_login">
+            {isSignup && (
+              <div style={{display: "flex", flexDirection: "column", flex: "1 0 45%"}}>
+                <input className="username" placeholder="enter a cool username" name="username" label="Username" onChange={handleChange} />
                 <input className="firstname" placeholder="First Name" name="firstName" label="First Name" onChange={handleChange} autoFocus />
                 <input className="lastname" placeholder="Last Name" name="lastName" label="Last Name" onChange={handleChange} />
-              </>
+              </div>
             )}
-          <input className="email" placeholder="enter your email here" name="email" label="Email Address" onChange={handleChange} type="email" />
-          {/* handleShowPassword={handleShowPassword} */}
-          <input className="password" placeholder="enter password" name="password" label="Password" onChange={handleChange} type={showPassword ? 'text' : 'password'} />
-          {isSignup && <input className="password" placeholder="repeat above password to confirm" name="confirmPassword" label="Repeat Password" onChange={handleChange} type="password" />}
+            {/* <div className="input-group">
+              <input className="input" name="email" onChange={handleChange} type="email" autoComplete="off"/>
+              <label className="user-label">First Name</label>
+          </div> */}
+            <div style={{display: "flex", flexDirection: "column", flex: "1 0 45%"}}>
+              <input className="email" placeholder="enter your email here" name="email" label="Email Address" onChange={handleChange} type="email" />
+              {/* handleShowPassword={handleShowPassword} */}
+              <input className="password" placeholder="enter password" name="password" label="Password" onChange={handleChange} type={showPassword ? 'text' : 'password'} />
+              {isSignup && <input className="password" placeholder="repeat password to confirm" name="confirmPassword" label="Repeat Password" onChange={handleChange} type="password" />}
+            </div>
           </div>
           <div className="login_button">
-          <button type="submit">{isSignup ? 'Sign Up' : 'Sign In'}</button>
-        </div>
-        <div className="divider_login">
-          <ColoredLine />
-          OR
-          <ColoredLine />
-        </div>
-        <div className="login_google">
-        <GoogleLogin
-            clientId={process.env.REACT_APP_GOOGLE_OAUTH_CLIENT_ID}
-            render={(renderProps) => (
-              <button className="login-with-google-btn" onClick={renderProps.onClick} disabled={renderProps.disabled}>
-                Google Sign In
-              </button>
-            )}
-            buttonText="Google SignIn"
-            onSuccess={googleSuccess}
-            onFailure={googleError}
-            cookiePolicy="single_host_origin"
-          />
-        </div>
-        {!isSignup && (<p className="forgot_password">Forgot Password?</p> ) }
-        <p className="forgot_password">
-        <button className="login_switch" onClick={switchMode}>
-                {isSignup ? 'Already have an account? Sign in' : "Don't have an account? Sign Up"}
-        </button>
-        </p>
-        {/* <Link to="/register">
+            <button type="submit">{isSignup ? 'Register' : 'Login'}</button>
+          </div>
+          <div className="divider_login">
+            <ColoredLine />
+            OR
+            <ColoredLine />
+          </div>
+          <div className="login_google">
+            <GoogleLogin
+              clientId={process.env.REACT_APP_GOOGLE_OAUTH_CLIENT_ID}
+              render={(renderProps) => (
+                <button className="login-with-google-btn" onClick={renderProps.onClick} disabled={renderProps.disabled}>
+                  Google Sign In
+                </button>
+              )}
+              buttonText="Google SignIn"
+              onSuccess={googleSuccess}
+              onFailure={googleError}
+              cookiePolicy="single_host_origin"
+            />
+          </div>
+          {!isSignup && (<p className="forgot_password">Forgot Password?</p>)}
+          <p className="forgot_password">
+            <button className="login_switch" onClick={switchMode}>
+              {isSignup ? (<div>Already have an account?<span style={{color: "#1183ca"}}>Sign In</span></div>) : (<div>Don't have an account?<span style={{color: "#5349d6"}}>Sign Up</span></div>)}
+            </button>
+          </p>
+          {/* <Link to="/register">
           <div className="signup_div">
             <span>Don't have an account?</span>
             <span>Sign up</span>
           </div>
         </Link> */}
-        </form>  
+        </form>
       </div>
     </div>
     // </form>

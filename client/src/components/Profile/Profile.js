@@ -4,7 +4,6 @@ import "./Profile.css";
 import defaultUser from "../../images/default-user.jpg";
 
 import CloudinaryUploadWidget from "../CloudinaryUploadWidget";
-import NewNavbar from "../Navbar/New Navbar";
 
 function Profile() {
   document.title = "ITER Connect | Profile";
@@ -12,7 +11,6 @@ function Profile() {
 
   return (
     <div>
-      <NewNavbar />
       <div className="profile_container">
         <div className="info_container">
 

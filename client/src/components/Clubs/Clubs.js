@@ -1,7 +1,5 @@
 import React from 'react'
 
-import NewNavbar from '../Navbar/New Navbar';
-
 import './Clubs.css'
 const Clubs = () => {
 
@@ -87,11 +85,10 @@ const Clubs = () => {
         socials: ["insta", "fb", "twitter", "linkedin", "github"]
 },
 ];
-let names = clubData.map((club) => club);
-console.log(names);
+// let names = clubData.map((club) => club);
+// console.log(names);
 return(
     <>
-    <NewNavbar/>
     <div className='clubs-container'>
     {clubData.map((club) => (
         <div className='club-box'>
