@@ -9,7 +9,7 @@ import memoriesLogo from "../../images/memories-Logo.png";
 import { signin, signup } from '../../actions/auth';
 import { AUTH } from '../../constants/actionTypes';
 
-const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' };
+const initialState = { firstName: '', lastName: '', username: '', email: '', password: '', confirmPassword: '' };
 
 function Login() {
 
@@ -122,22 +122,15 @@ function Login() {
               cookiePolicy="single_host_origin"
             />
           </div>
+          </form>
           {!isSignup && (<p className="forgot_password">Forgot Password?</p>)}
           <p className="forgot_password">
             <button className="login_switch" onClick={switchMode}>
               {isSignup ? (<div>Already have an account?<span style={{color: "#1183ca"}}>Sign In</span></div>) : (<div>Don't have an account?<span style={{color: "#5349d6"}}>Sign Up</span></div>)}
             </button>
           </p>
-          {/* <Link to="/register">
-          <div className="signup_div">
-            <span>Don't have an account?</span>
-            <span>Sign up</span>
-          </div>
-        </Link> */}
-        </form>
       </div>
     </div>
-    // </form>
   );
 }
 
