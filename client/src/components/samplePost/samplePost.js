@@ -1,10 +1,6 @@
 import React from "react";
-// import { Link, useLocation, useNavigate } from 'react-router-dom';
-// import { useDispatch } from 'react-redux';
-// import { Avatar } from '@mui/material';
 import "./samplePost.css";
 import userPost from "./user_post.png";
-// import reyansh from "./square_image.jpeg";
 import ReactionPanel from "../ReactionPanel/ReactionPanel";
 import '../../App.css'
 
@@ -22,14 +18,13 @@ const samplePost = ({ post, setCurrentId, selectModal }) => {
       <div className="post_heading">
         <div style={{ display: "flex", flexDirection: "row" }}>
           <img className="userpic" src={userPost} alt="post pic" />
-          {/* <Avatar alt={user?.result.name} src={user?.result.imageUrl}>{user?.result.name.charAt(0)}</Avatar> */}
           <div className="userInfo">
 
             <span style={{ fontFamily: "Roboto, sans-serif" }}>
               {post.name}
             </span>
             <span style={{ opacity: "50%" }}>
-              Computer Science Engineering, 4th Year
+              B.Tech(CSE), 4th Year
             </span>
             <span style={{ opacity: "50%" }}>{moment(post.createdAt).fromNow()}</span>
           </div>
@@ -49,6 +44,7 @@ const samplePost = ({ post, setCurrentId, selectModal }) => {
           )}
       </div>
       <div className="userPost">
+        {/* <div className="ca">{post.title}</div> */}
         <div className="caption">{post.message}</div>
         <div className="tags">{post.tags.map((tag) => `#${tag} `)}</div>
         <div className="imagePost">
