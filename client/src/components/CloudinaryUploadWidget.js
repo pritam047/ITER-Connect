@@ -13,7 +13,7 @@ class CloudinaryUploadWidget extends Component {
           console.log("Done! Here is the image info: ", result.info);
           const id = this.props.user.result._id;
           console.log(id);
-          const updated = await axios.patch(`http://localhost:5000/user/${id}`, {imageUrl: result.info.url});
+          const updated = await axios.patch(`https://moments-server21.herokuapp.com/user/${id}`, {imageUrl: result.info.url});
           console.log(updated); 
         }
       }
