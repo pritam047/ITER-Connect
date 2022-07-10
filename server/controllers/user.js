@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 import 'dotenv/config';
 
 import UserModel from "../models/user.js";
-
+import PostMessage from '../models/postMessages.js'
 
 export const signin = async (req, res) => {
   const { email, password } = req.body;
@@ -58,3 +58,32 @@ export const signup = async (req, res) => {
     console.log(error);
   }
 };
+
+export const getPostsByUser = async (req,res) => {
+  const { id } = req.params;
+  try{
+    const postsByUser = await PostMessage.find({creator: id});
+    res.json({data: postsByUser});
+  }
+  catch(error){
+    res.status(500).json({ message: "Something went wrong" });
+    
+    console.log(error);
+  }
+}
+
+export const getUser = async (req,res) => {
+  const { id } = req.params;
+  try{
+    const existingUser = await UserModel.findOne({ _id: id });
+    if (!existingUser) return res.status(404).json({ message: "User doesn't exist" });
+  
+    const {username, name, _id, email, imageUrl } = existingUser; 
+    res.json({data: {username, name, _id, email, imageUrl } });
+  }
+  catch(error){
+    res.status(500).json({ message: "Something went wrong" });
+    
+    console.log(error);
+  }
+}

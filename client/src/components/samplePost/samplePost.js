@@ -5,6 +5,7 @@ import ReactionPanel from "../ReactionPanel/ReactionPanel";
 import '../../App.css'
 
 import moment from 'moment'
+import { Link } from "react-router-dom";
 
 // import { likePost, deletePost } from '../../actions/posts';
 
@@ -19,10 +20,11 @@ const samplePost = ({ post, setCurrentId, selectModal }) => {
         <div style={{ display: "flex", flexDirection: "row" }}>
           <img className="userpic" src={userPost} alt="post pic" />
           <div className="userInfo">
-
+            <Link to={`/profile/${post.creator}`} style={{textDecoration: "none", color: "inherit"}}>
             <span style={{ fontFamily: "Roboto, sans-serif" }}>
               {post.name}
             </span>
+            </Link>
             <span style={{ opacity: "50%" }}>
               B.Tech(CSE), 4th Year
             </span>
@@ -46,7 +48,7 @@ const samplePost = ({ post, setCurrentId, selectModal }) => {
       <div className="userPost">
         {/* <div className="ca">{post.title}</div> */}
         <div className="caption">{post.message}</div>
-        <div className="tags">{post.tags.map((tag) => `#${tag} `)}</div>
+        <div className="tags">{post.tags[0].length>0 && post.tags.map((tag) => `#${tag} `)}</div>
         <div className="imagePost">
           {/* <Avatar alt={user?.result.name} src={user?.result.imageUrl}>{user?.result.name.charAt(0)}</Avatar> */}
           <img src={post.selectedFile} onError={(e) => { e.target.onerror = null; e.target.src = "https://dummyimage.com/600x400/f2e9f2/0011ff&text=404+Not+Found" }} alt="banner" />

@@ -40,7 +40,7 @@ const App = () => {
             <Route path="/" exact element={<Navigate to="/posts" replace />} />
             <Route path="/posts" exact element={<Home setCurrentId={setCurrentId} selectModal={selectModal} />} />
             <Route path="/posts/search" exact element={<Home setCurrentId={setCurrentId} selectModal={selectModal} />} />
-            <Route path="/profile" element={<Profile />} />
+            <Route path="/profile/:id" element={<Profile />} />
             <Route path="/createblog" element={user ? <CreateBlog /> : <Navigate to='/auth' />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/clubs" element={<Clubs />} />

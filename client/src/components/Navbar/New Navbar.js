@@ -88,7 +88,7 @@ function NewNavbar({ selectModal, darkMode, setDarkMode }) {
           </Link>
           <img src={addPost} onClick={selectModal} alt="add" style={{ cursor: "pointer" }} />
           <img src={explore} alt="explore" />
-          <Link to="/profile">
+          <Link to={`/profile/${user?.result?._id}`}>
           <div className="header_avatar">
             <img
             src={user?.result?.imageUrl || `https://ui-avatars.com/api/?background=0D8ABC&color=fff&name=${user?.result?.name}`} 
@@ -98,7 +98,7 @@ function NewNavbar({ selectModal, darkMode, setDarkMode }) {
           </div>
             {/* <Avatar alt={user?.result.name} src={user?.result.imageUrl}>{user?.result.name.charAt(0)}</Avatar> */}
           </Link>
-          <buttton type="button" className="button logout" onClick={logout}>Logout</buttton>
+          <button type="button" className="button logout" onClick={logout}>Logout</button>
         </div>
         ) :
         <div>
