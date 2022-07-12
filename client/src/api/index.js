@@ -1,6 +1,8 @@
 import axios from  'axios';
+import { config } from '../Constants';
 
-const API = axios.create({ baseURL: 'http://localhost:5000' }); // server url
+let  baseUrl = config.url.API_URL;
+const API = axios.create({ baseURL: baseUrl }); // server url
 // https://moments-server21.herokuapp.com
 API.interceptors.request.use((req) => {
     if (localStorage.getItem('profile')) {
